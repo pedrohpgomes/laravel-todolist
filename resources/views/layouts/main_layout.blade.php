@@ -12,7 +12,8 @@
 
     </head>
     <body>
-       @yield('content')
+        @include('flash-message')
+        @yield('content')
         
         <script src="{{asset('assets/bootstrap/bootstrap.bundle.min.js')}}"></script>
     </body>
