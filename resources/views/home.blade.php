@@ -14,12 +14,46 @@
                 @if ($tasks->count() === 0)
                     <p>No tasks available</p>
                 @else
-                    <p>Ok!!!</p>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Task</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tasks as $task)
+                                <tr>
+                                    <td style='width:70%'>{{$task->task}}</td>
+                                    <td>
+                                        @if ($task->done == null)
+                                            <a href=""  class="btn btn-primary btn-sm" title='finalizar'><i class="fa fa-check"></i></a>
+                                        @else
+                                            <a href="" class="btn btn-success btn-sm" title='desfazer' style='width:32px'><i class="fa fa-times"></i></a>
+                                        @endif
+
+                                        <a href="" class="btn btn-danger btn-sm" title='editar' style='width:32px'><i class="fas fa-edit"></i></a>
+
+                                        @if ($task->visible ==1)
+                                            <a href="" class="btn btn-secondary btn-sm" title='tornar invisível' style='width:32px'><i class="fas fa-eye-slash"></i></a>
+                                        @else
+                                            <a href="" class="btn btn-secondary btn-sm" title='tornar visível' style='width:32px'><i class="fas fa-eye"></i></a>  
+                                        @endif
+                                        
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <p class='text-center'>Total: {{$tasks->count()}}</p>
+                    </div>
                 @endif
 
 
 
-            </div>
-        </div>
-    </div>
+            </div>{{-- col --}}
+        </div>{{-- row --}}
+    </div>{{-- container-fluid --}}
 @endsection

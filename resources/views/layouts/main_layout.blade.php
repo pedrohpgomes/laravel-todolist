@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/bootstrap/bootstrap.min.css')}}" />
         <script src="{{asset('assets/jquery-3.6.0.js')}}"></script>
-         <link rel="stylesheet" href="{{asset('assets/fontawesome/all.css')}}" />
+         <link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.css')}}" />
 
     </head>
     <body>

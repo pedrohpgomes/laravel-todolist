@@ -14,4 +14,4 @@ class task extends Model
     public $incrementing = true;
 
     use SoftDeletes;
-}
+}//class
